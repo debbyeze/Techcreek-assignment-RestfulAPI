@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 
 const postSchema = mongoose.Schema({
+  
     firstName: {
       type: String,
       required: true
@@ -12,10 +13,12 @@ const postSchema = mongoose.Schema({
     },
     email: {
       type: String,
-      required: true
+      unique: true,
+      lowercase: true
+
     },
     phoneNumber: {
-      type: Number,
+      type: String,
       required: true
     },
     address: {
